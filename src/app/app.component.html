@@ -2,9 +2,8 @@
 Ciudad: <input #miCiudad/>
 <br />
 <button (click)="agregarCiudad(miCiudad.value)">Añadir</button>
-<h1> ciudad: {{ ciudades[0] }}</h1>
 
-<app-ciudades></app-ciudades>
+<app-ciudades [ciudades]='misciudades'></app-ciudades>
 
 
 <router-outlet></router-outlet>

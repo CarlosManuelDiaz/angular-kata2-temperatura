@@ -8,16 +8,16 @@ import { Ciudad } from './ciudad';
 })
 export class AppComponent {
   title = 'temperatura';
-  public ciudades: Array<Ciudad> = [];
+  public misciudades: Array<Ciudad> = [];
 
   public agregarCiudad(nombre: string): void {
-    this.ciudades.push({
+    this.misciudades.push({
       nombre,
       temperatura: {
         valor: 20,
         tipo: 'ºC'
       }
     });
-    console.log(this.ciudades);
+    console.log(this.misciudades);
   }
 }

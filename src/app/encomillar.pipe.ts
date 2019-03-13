@@ -9,7 +9,7 @@ export class EncomillarPipe implements PipeTransform {
     if (value.toLowerCase() === 'mierda') {
       return '******';
     }
-    return "'" + value + "'";
+    return '\'' + value + '\'';
   }
 
 }

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Ciudad } from './ciudad';
+import { FLAGS } from '@angular/core/src/render3/interfaces/view';
+import { ApiTemperaturaService } from './api-temperatura.service';
 
 @Component({
   selector: 'app-root',
@@ -7,17 +9,24 @@ import { Ciudad } from './ciudad';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'temperatura';
+  title = 'Temperaturas';
   public misciudades: Array<Ciudad> = [];
+  msg = '';
+
+  constructor(private apiTemp: ApiTemperaturaService) {}
 
   public agregarCiudad(nombre: string): void {
     this.misciudades.push({
       nombre,
       temperatura: {
-        valor: 20,
+        valor: this.apiTemp.obternerTemperatura(),
         tipo: 'ºC'
       }
     });
-    console.log(this.misciudades);
+    this.msg = 'Ciudad Agregada';
   }
+  public closealert(): void {
+    this.msg = '';
+  }
+
 }

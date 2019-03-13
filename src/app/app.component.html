@@ -1,7 +1,35 @@
-<h1>{{title}}n</h1>
-Ciudad: <input #miCiudad/>
-<br />
-<button (click)="agregarCiudad(miCiudad.value)">Añadir</button>
+<div class="container app">
+        <div class="row">
+            <div class="col-sm-7">
+                <h1 class="text-right">
+                        {{title}}
+                </h1>
+            </div>
+            <div class="col-sm-5">
+                <div class="alert alert-success alert-dismissable" *ngIf='msg'>
+                    <a href="#" class="close" (click)="closealert()">
+                        &times;
+                    </a>
+                    {{msg}}
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="container">
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Ciudad</span>
+        </div>
+        <input type="text" class="form-control" placeholder="Ciudad" #miCiudad aria-label="Username"
+            aria-describedby="basic-addon1" required>
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button"
+                (click)="agregarCiudad(miCiudad.value)">Añadir</button>
+        </div>
+    </div>
+</div>
+
+
 
 <app-ciudades [ciudades]='misciudades'></app-ciudades>
 
